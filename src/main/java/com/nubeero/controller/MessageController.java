@@ -23,8 +23,8 @@ public class MessageController {
 
     @GetMapping("/hi/{name}")
     public ResponseEntity getHiMessage(@PathVariable ("name") String inputName){
-        Message msg = Message.builder().messageBody("Hi "+inputName).build();
-        return ResponseEntity.ok(msg);
+        Message msgObj = messageService.sayHiMessage(inputName);
+        return ResponseEntity.ok(msgObj);
     }
 
 
